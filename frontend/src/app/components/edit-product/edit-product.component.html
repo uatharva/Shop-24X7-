@@ -1,0 +1,132 @@
+<div class="container">
+  <div class="row">
+    <form
+      #f="ngForm"
+      class="col-5"
+      style="margin: 0 auto"
+      (ngSubmit)="saveProductChanges()"
+    >
+      <h3 class="mb-3">Edit Product</h3>
+      <div class="form-group mb-2">
+        <label>Product Name</label>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Product Name"
+          id="name"
+          name="name"
+          #name="ngModel"
+          required
+          [(ngModel)]="product.title"
+          [ngClass]="{
+            'is-invalid': !name.valid && (name?.dirty || name?.touched)
+          }"
+        />
+        <div
+          class="invalid-feedback d-block"
+          *ngIf="!name.valid && (name?.dirty || name?.touched)"
+        >
+          <div *ngIf="name.errors.required">Product Name is required</div>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label>Department</label>
+        <select
+          class="form-select"
+          name="department"
+          [(ngModel)]="product.department"
+        >
+          <option>Cell Phones</option>
+          <option>TV & Home Theater</option>
+          <option>Audio</option>
+          <option>Appliances</option>
+          <option>Furniture</option>
+        </select>
+      </div>
+      <div class="form-group mb-2">
+        <label>Price</label>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Price"
+          id="price"
+          name="price"
+          #price="ngModel"
+          required
+          pattern="^\$?\-?([1-9]{1}[0-9]{0,2}(\,\d{3})*(\.\d{0,2})?|[1-9]{1}\d{0,}(\.\d{0,2})?|0(\.\d{0,2})?|(\.\d{1,2}))$|^\-?\$?([1-9]{1}\d{0,2}(\,\d{3})*(\.\d{0,2})?|[1-9]{1}\d{0,}(\.\d{0,2})?|0(\.\d{0,2})?|(\.\d{1,2}))$|^\(\$?([1-9]{1}\d{0,2}(\,\d{3})*(\.\d{0,2})?|[1-9]{1}\d{0,}(\.\d{0,2})?|0(\.\d{0,2})?|(\.\d{1,2}))\)$"
+          [(ngModel)]="product.price"
+          [ngClass]="{
+            'is-invalid': !price.valid && (price?.dirty || price?.touched)
+          }"
+        />
+        <div
+          class="invalid-feedback d-block"
+          *ngIf="!price.valid && (price?.dirty || price?.touched)"
+        >
+          <div *ngIf="price.errors.required">Price is required</div>
+          <div *ngIf="price.errors.pattern">Invalid dollar amount</div>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label>Discount Price</label>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Discount Price"
+          id="discountPrice"
+          name="discountPrice"
+          #discountPrice="ngModel"
+          required
+          pattern="^\$?\-?([1-9]{1}[0-9]{0,2}(\,\d{3})*(\.\d{0,2})?|[1-9]{1}\d{0,}(\.\d{0,2})?|0(\.\d{0,2})?|(\.\d{1,2}))$|^\-?\$?([1-9]{1}\d{0,2}(\,\d{3})*(\.\d{0,2})?|[1-9]{1}\d{0,}(\.\d{0,2})?|0(\.\d{0,2})?|(\.\d{1,2}))$|^\(\$?([1-9]{1}\d{0,2}(\,\d{3})*(\.\d{0,2})?|[1-9]{1}\d{0,}(\.\d{0,2})?|0(\.\d{0,2})?|(\.\d{1,2}))\)$"
+          [(ngModel)]="product.discountPrice"
+          [ngClass]="{
+            'is-invalid':
+              !discountPrice.valid &&
+              (discountPrice?.dirty || discountPrice?.touched)
+          }"
+        />
+        <div
+          class="invalid-feedback d-block"
+          *ngIf="
+            !discountPrice.valid &&
+            (discountPrice?.dirty || discountPrice?.touched)
+          "
+        >
+          <div *ngIf="discountPrice.errors.required">
+            Discount price is required
+          </div>
+          <div *ngIf="discountPrice.errors.pattern">Invalid dollar amount</div>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label>Product Description</label>
+        <textarea
+          class="form-control"
+          placeholder="Description"
+          id="description"
+          name="description"
+          #description="ngModel"
+          [(ngModel)]="product.description"
+          required
+          rows="4"
+          [ngClass]="{
+            'is-invalid':
+              !description.valid && (description?.dirty || description?.touched)
+          }"
+        >
+        </textarea>
+        <div
+          class="invalid-feedback d-block"
+          *ngIf="
+            !description.valid && (description?.dirty || description?.touched)
+          "
+        >
+          <div *ngIf="description.errors.required">Description is required</div>
+        </div>
+      </div>
+      <div class="form-group d-flex justify-content-end">
+        <button class="btn btn-success" [disabled]="!f.valid">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

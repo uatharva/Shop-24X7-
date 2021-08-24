@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row login d-flex justify-content-around">
+    <div class="col-6">
+      <h2>Welcome to Shop24x7</h2>
+      <p class="text-justify">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia rem
+        minima voluptatem consectetur repellendus! Recusandae obcaecati hic
+        vitae, nesciunt veniam nisi unde nemo dolores expedita. Voluptatibus
+        soluta vel sed eum quo numquam amet cum minus excepturi ex enim id eos
+        nemo corporis dolor nihil nesciunt labore recusandae, veritatis autem
+        alias praesentium qui. Aliquam natus nobis vero dicta reiciendis
+        distinctio velit ratione sint aut! Sed?
+      </p>
+    </div>
+    <form
+      #f="ngForm"
+      class="col-4 border border-secondary px-4 py-2 rounded"
+      (ngSubmit)="onLogin()"
+      novalidate
+    >
+      <h3 class="text-center mb-2">Login</h3>
+      <div
+        *ngIf="invalidUserError"
+        class="invalid-feedback d-block text-center"
+      >
+        Invalid email or password.
+      </div>
+      <div class="form-group mb-2">
+        <label>Email</label>
+        <input
+          class="form-control"
+          type="email"
+          id="email"
+          name="email"
+          #email="ngModel"
+          placeholder="Email"
+          email
+          required
+          [(ngModel)]="user.username"
+          [ngClass]="{
+            'is-invalid': !email.valid && (email?.dirty || email?.touched)
+          }"
+        />
+        <div
+          class="invalid-feedback d-block"
+          *ngIf="!email.valid && (email?.dirty || email?.touched)"
+        >
+          <div *ngIf="email.errors.required">Email is required</div>
+          <div *ngIf="email.errors.email">
+            Email must be in correct format e.g. john@example.com
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label>Password</label>
+        <input
+          class="form-control"
+          type="password"
+          id="password"
+          name="password"
+          #password="ngModel"
+          placeholder="Password"
+          required
+          [(ngModel)]="user.password"
+          [ngClass]="{
+            'is-invalid':
+              !password.valid && (password?.dirty || password?.touched)
+          }"
+        />
+        <div
+          class="invalid-feedback d-block"
+          *ngIf="!password.valid && (password?.dirty || password?.touched)"
+        >
+          <div *ngIf="password.errors.required">Password is required</div>
+        </div>
+      </div>
+      <input
+        type="submit"
+        value="Login"
+        class="btn btn-primary my-2 btn-block w-100"
+        [disabled]="!f.valid"
+      />
+      <div class="text-center text-secondary">Or</div>
+      <a
+        class="btn btn-link my-2 btn-block w-100"
+        style="text-decoration: none"
+        [routerLink]="['/register']"
+        >Create Account</a
+      >
+    </form>
+  </div>
+</div>

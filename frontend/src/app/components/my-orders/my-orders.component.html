@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3 class="mb-4">Your Orders</h3>
+      <div
+        class="row border-bottom border-secondary mb-4"
+        *ngFor="let o of order"
+      >
+        <div class="col d-flex justify-content-between">
+          <div>
+            <h4>#{{ o._id }}</h4>
+            <div>{{ o.username }}</div>
+            <div *ngIf="currOrderDetailsId === o._id">
+              <div class="fw-bold">Cart</div>
+              <div *ngFor="let p of o.cart">
+                {{ p.quantity }}x {{ p.productId }}
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <div
+              class="text-info"
+              (click)="showProducts(o._id)"
+              style="cursor: pointer"
+            >
+              Details
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

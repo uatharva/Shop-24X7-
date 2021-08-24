@@ -1,0 +1,23 @@
+.container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.card.product {
+  padding: 0;
+  border: none;
+}
+
+.rec-products {
+  border-top: none;
+  border-bottom: none;
+  border-radius: 0;
+}
+
+.rec-products:first-child {
+  border-left: none;
+}
+
+.rec-products:last-child {
+  border-right: none;
+}

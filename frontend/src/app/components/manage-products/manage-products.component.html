@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex justify-content-between">
+        <h3 class="mb-4">Manage Products</h3>
+        <button
+          class="btn btn-primary"
+          style="height: fit-content"
+          [routerLink]="['/new-product']"
+        >
+          Add New Product
+        </button>
+      </div>
+      <div
+        class="row border-bottom border-secondary mb-4"
+        *ngFor="let p of products"
+      >
+        <div class="col d-flex justify-content-between">
+          <div>
+            <h4>{{ p.title }}</h4>
+            <div>Price: {{ p.price | currency }}</div>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <div style="cursor: pointer">
+              <span
+                class="text-success"
+                [routerLink]="['/edit-product/' + p._id]"
+                >Edit</span
+              >
+              |
+              <span class="text-danger" (click)="deleteProduct(p._id)"
+                >Delete</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

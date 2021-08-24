@@ -1,0 +1,36 @@
+<div class="container">
+  <h3 class="mb-4">Cart</h3>
+  <div class="row" style="min-height: 350px">
+    <div class="col">
+      <div *ngFor="let p of cart" class="row border-bottom border-secondary">
+        <div class="col d-flex justify-content-between">
+          <div>
+            <h4>{{ p.quantity }}X {{ p.title }}</h4>
+            <div>Price: {{ p.price | currency }}</div>
+            <div>Discount: {{ p.discountPrice | currency }}</div>
+            <div
+              class="text-danger"
+              (click)="removeProduct(p.productId)"
+              style="cursor: pointer"
+            >
+              Remove
+            </div>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <h4>{{ p.currPrice | currency }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col d-flex justify-content-end">
+      <div>
+        <h4>Grand Total: {{ total | currency }}</h4>
+        <button class="btn btn-warning w-100" (click)="checkout()">
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

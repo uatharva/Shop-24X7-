@@ -1,0 +1,183 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "Apple iPhone 12",
+      "description": "5G speed. A14 Bionic, the fastest chip in a smartphone. An edge-to-edge OLED display. And Night mode on every camera.",
+      "price": 899.99,
+      "sold": 200,
+      "department": "Cell Phones"
+    },
+    {
+      "id": 2,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "Google - Pixel 5 5G 128GB - Just Black (AT&T)",
+      "description": "Google Pixel 5 Cell Phone for AT&T: Enjoy blazing-fast streaming capability with this just black Google Pixel 5 smartphone.",
+      "price": 599.99,
+      "sold": 100,
+      "department": "Cell Phones"
+    },
+    {
+      "id": 3,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "OnePlus - Nord N10 5G 128GB Midnight Ice (Unlocked) - Midnight Ice",
+      "description": "OnePlus Nord N10 5G brings the most affordable premium 5G experience to the market. It brings the power of 5G to more consumers along with burdenless user experience, 90 Hz smooth display, Warp charge 30T, and high-quality quad-camera performance.",
+      "price": 229.99,
+      "sold": 50,
+      "department": "Cell Phones"
+    },
+    {
+      "id": 4,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "Motorola - Moto G Stylus 5G 256GB (Unlocked) - Cosmic Emerald",
+      "description": "The new moto g stylus 5G gives you the ultra-fast speed and built-in stylus you want. How about a 48 MP quad camera system? It’s yours. Maybe you’re craving a blazing-fast processor. No problem. And 256 MB of storage? Done. All this plus two days of battery life and a gorgeous 6.8 display.",
+      "price": 349.99,
+      "sold": 150,
+      "department": "Cell Phones"
+    },
+    {
+      "id": 5,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "Samsung - Galaxy A42 5G 128GB (Unlocked) - Black",
+      "description": "You need a phone that can capture share worthy photos and video with the tap of a finger, scroll through your feed at lightning speed, and stream what you want when you want it. Outfitted with our best core features plus some awesome innovations, Galaxy A42 5G for Verizon lets you create, share and stay connected without breaking the bank.",
+      "price": 399.99,
+      "sold": 250,
+      "department": "Cell Phones"
+    },
+    {
+      "id": 6,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "Nokia - 5.4 128GB (Unlocked) - Polar Night",
+      "description": "Capture every beautiful detail of the things you love with zero shutter lag on the powerful 48MP Quad camera and 16MP punch hole selfie camera. Plus, catch your world in motion with cinematic video recording, and add a little flair with tools like color grading. Go for a device designed to keep up with you.",
+      "price": 249.99,
+      "sold": 25,
+      "department": "Cell Phones"
+    },
+    {
+      "id": 7,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "Samsung - 70” Class 7 Series LED 4K UHD Smart Tizen TV",
+      "description": "Enhance your viewing experience with this 70-inch Samsung 4K UHD smart TV. The HDR technology and 4K UHD resolution render sharp details and realistic colors, while a Crystal processor delivers exceptional picture quality on the flat-panel display.",
+      "price": 699.99,
+      "sold": 325,
+      "department": "TV & Home Theater"
+    },
+    {
+      "id": 8,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "LG - 70\" Class UN7070 Series LED 4K UHD Smart webOS TV",
+      "description": "LG UHD TV is your ticket to a stunning picture. Get easy access to new and popular apps like Disney+, the Apple TV app, Sling and more. Elevate entertainment with surround sound, auto picture settings of Filmmaker Mode™ and convenient updates of Sports Alert.",
+      "price": 629.99,
+      "sold": 545,
+      "department": "TV & Home Theater"
+    },
+    {
+      "id": 9,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "Samsung - 65\" Class 7 Series LED 4K UHD Smart Tizen TV",
+      "description": "Enhance your viewing experience with this 70-inch Samsung 4K UHD smart TV. This Bluetooth-enabled Samsung 4K UHD smart TV is voice controllable for hands-free operation and seamless wireless streaming.",
+      "price": 649.99,
+      "sold": 925,
+      "department": "TV & Home Theater"
+    },
+    {
+      "id": 10,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "Samsung - 58\" Class 7 Series LED 4K UHD Smart Tizen TV",
+      "description": "Enhance your viewing experience with this 70-inch Samsung 4K UHD smart TV. This Bluetooth-enabled Samsung 4K UHD smart TV is voice controllable for hands-free operation and seamless wireless streaming.",
+      "price": 529.99,
+      "sold": 900,
+      "department": "TV & Home Theater"
+    },
+    {
+      "id": 11,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "PYLE - 300W 4-Ch. Stereo Receiver - Black",
+      "description": "Enhance your audio setup with this Pyle PT390AU stereo receiver, which handles up to 300W of power to drive 4 loudspeakers (not included). An AM/FM radio with controls allows you to enjoy your favorite music and talk programming.",
+      "price": 99.99,
+      "sold": 400,
+      "department": "Audio"
+    },
+    {
+      "id": 12,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "Sony - 2.0-Ch. Stereo Receiver with Bluetooth - Black",
+      "description": "Bring together your analog and digital music collection with this 2-channel Sony receiver. Its phono input lets you hook up a record player directly, and its Bluetooth capability allows convenient wireless streaming from compatible devices.",
+      "price": 169.99,
+      "sold": 300,
+      "department": "Audio"
+    },
+    {
+      "id": 13,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "Yamaha - 5.1-Ch. 4K Ultra HD A/V Home Theater Receiver - Black",
+      "description": "Bring cutting-edge technology to your home theater with this 5.1-channel Yamaha A/V receiver.",
+      "price": 299.99,
+      "sold": 100,
+      "department": "Audio"
+    },
+    {
+      "id": 14,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "LG - 29 cu. Ft. 3 Door French Door with Ice Maker, and External Water Dispenser - PrintProof Stainless Steel",
+      "description": "More space. More chilled water. Less fuss. This is the refrigerator you dreamed of with the feature set that matters. Open the wide French Doors to reveal a spacious 29 cu. ft. of storage - now more useful space than ever.",
+      "price": 1999.99,
+      "sold": 124,
+      "department": "Appliances"
+    },
+    {
+      "id": 15,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "GE - Profile 2.2 Cu. Ft. Microwave - Slate",
+      "description": "Heat meals quickly with this 25-inch GE Profile countertop microwave.",
+      "price": 469.99,
+      "sold": 264,
+      "department": "Appliances"
+    },
+    {
+      "id": 16,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "Amana - 3.5 Cu. Ft. Top Load Washer with Dual-Action Agitator - White",
+      "description": "Wash your clothes with this Amana top-load washer.",
+      "price": 494.99,
+      "sold": 404,
+      "department": "Appliances"
+    },
+    {
+      "id": 17,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "OSP Home Furnishings - Russell L-Shape Sectional Sofa - Navy",
+      "description": "Invite comfort into your home with this reversible chaise sectional sofa.",
+      "price": 581.99,
+      "sold": 500,
+      "department": "Furniture"
+    },
+    {
+      "id": 18,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "Insignia™ - TV Cabinet for Most Flat-Panel TVs Up to 75\" - Brown",
+      "description": "Revamp your entertainment area with this Insignia TV console.",
+      "price": 219.99,
+      "sold": 300,
+      "department": "Furniture"
+    },
+    {
+      "id": 19,
+      "image": "https://via.placeholder.com/1920x1080",
+      "title": "AveSix - Russell L-Shape Sectional Sofa - Brown",
+      "description": "Create a cozy lounging area within your home with this AveSix Russell sectional sofa in polyester upholstery.",
+      "price": 481.99,
+      "sold": 600,
+      "department": "Furniture"
+    }
+  ],
+  "users": [
+    {
+      "firstName": "john",
+      "lastName": "walker",
+      "password": "12345678",
+      "email": "john.walker@gmail.com"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+.container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.nav-item {
+  user-select: none;
+  cursor: pointer;
+}
+
+.nav-link {
+  color: black;
+}
+
+.card-text {
+  min-height: 48px;
+}
+
+.list-group-item {
+  text-align: start;
+  padding: 4px;
+  border: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  font-weight: bold;
+  color: var(--bs-blue);
+}
+
+.active.list-group-item {
+  font-weight: bold;
+  color: var(--bs-blue);
+  background-color: transparent;
+}
+
+.card {
+  padding: 0;
+  width: 16rem;
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row d-flex justify-content-evenly mb-5">
+    <div class="col-6 card product">
+      <h4>{{ product.title }}</h4>
+      <img src="https://via.placeholder.com/1920x1080" class="rounded" />
+    </div>
+    <div class="col-3 d-flex justify-content-center flex-column p-0">
+      <div class="d-flex flex-column w-100 mb-1">
+        <p style="min-height: 240px">
+          {{ product.description }}
+        </p>
+        <div class="d-flex w-100 mb-2">
+          <h3 style="margin-right: 16px">{{ product.price | currency }}</h3>
+          <h3 class="text-danger text-decoration-line-through">
+            {{ product.discountPrice | currency }}
+          </h3>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <button
+          class="btn btn-primary"
+          style="width: 48%"
+          (click)="addItemToCart(product._id)"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-10" style="margin: 0 auto">
+      <h4>Recommended Products</h4>
+      <div class="row row-cols-3 d-flex justify-content-between">
+        <div *ngFor="let p of recProducts" class="card col rec-products">
+          <img
+            src="{{ p.image }}"
+            class="card-img-top"
+            alt="..."
+            (click)="goToDetails(p._id)"
+          />
+          <div class="card-body">
+            <p class="card-text">
+              {{ p.title | truncate: 51 }}
+            </p>
+            <div class="d-flex justify-content-between">
+              <div class="fw-bold">{{ p.price }}</div>
+              <button class="btn btn-primary" (click)="addItemToCart(p._id)">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

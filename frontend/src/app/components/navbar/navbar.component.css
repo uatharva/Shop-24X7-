@@ -1,0 +1,19 @@
+.cart-btn {
+  position: relative;
+}
+
+.cart-amt {
+  position: absolute;
+  background-color: var(--bs-red);
+  color: white;
+  border-radius: 25%;
+  padding: 2px;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  top: -4px;
+  left: 28px;
+  min-width: 20px;
+}

@@ -1,0 +1,187 @@
+<div class="container">
+  <div class="row">
+    <form
+      #f="ngForm"
+      class="col-5"
+      style="margin: 0 auto"
+      (ngSubmit)="saveOrderChanges()"
+    >
+      <h3>Edit User Info</h3>
+      <div class="form-group mb-2">
+        <label>First Name</label>
+        <input
+          class="form-control"
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="First Name"
+          #firstName="ngModel"
+          required
+          [(ngModel)]="user.firstName"
+          [ngClass]="{
+            'is-invalid':
+              !firstName.valid && (firstName?.dirty || firstName?.touched)
+          }"
+        />
+        <div
+          class="invalid-feedback d-block"
+          *ngIf="!firstName.valid && (firstName?.dirty || firstName?.touched)"
+        >
+          <div *ngIf="firstName.errors.required">First Name is required</div>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label>Last Name</label>
+        <input
+          class="form-control"
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Last Name"
+          #lastName="ngModel"
+          required
+          [(ngModel)]="user.lastName"
+          [ngClass]="{
+            'is-invalid':
+              !lastName.valid && (lastName?.dirty || lastName?.touched)
+          }"
+        />
+        <div
+          class="invalid-feedback d-block"
+          *ngIf="!lastName.valid && (lastName?.dirty || lastName?.touched)"
+        >
+          <div *ngIf="lastName.errors.required">Last Name is required</div>
+        </div>
+      </div>
+
+      <div class="form-group mb-4">
+        <label>Email</label>
+        <input
+          class="form-control"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          #email="ngModel"
+          required
+          email
+          [(ngModel)]="user.email"
+          [ngClass]="{
+            'is-invalid': !email.valid && (email?.dirty || email?.touched)
+          }"
+        />
+        <div
+          class="invalid-feedback d-block"
+          *ngIf="!email.valid && (email?.dirty || email?.touched)"
+        >
+          <div *ngIf="email.errors.required">Email is required</div>
+          <div *ngIf="email.errors.email">
+            Email must be in correct format e.g. john@example.com
+          </div>
+        </div>
+      </div>
+      <h3>Edit Shipping Address</h3>
+      <div class="form-group mb-2">
+        <label>Street Address</label>
+        <input
+          class="form-control"
+          type="text"
+          id="address"
+          name="address"
+          placeholder="Street Address"
+          #address="ngModel"
+          required
+          [(ngModel)]="user.address"
+          [ngClass]="{
+            'is-invalid': !address.valid && (address?.dirty || address?.touched)
+          }"
+        />
+        <div
+          class="invalid-feedback d-block"
+          *ngIf="!address.valid && (address?.dirty || address?.touched)"
+        >
+          <div *ngIf="address.errors.required">Address is required</div>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label>City</label>
+        <input
+          class="form-control"
+          type="text"
+          id="city"
+          name="city"
+          placeholder="City"
+          #city="ngModel"
+          required
+          [(ngModel)]="user.city"
+          [ngClass]="{
+            'is-invalid': !city.valid && (city?.dirty || city?.touched)
+          }"
+        />
+        <div
+          class="invalid-feedback d-block"
+          *ngIf="!city.valid && (city?.dirty || city?.touched)"
+        >
+          <div *ngIf="city.errors.required">City is required</div>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label>State</label>
+        <input
+          class="form-control"
+          type="text"
+          id="state"
+          name="state"
+          placeholder="State"
+          #state="ngModel"
+          required
+          [(ngModel)]="user.state"
+          [ngClass]="{
+            'is-invalid': !state.valid && (state?.dirty || state?.touched)
+          }"
+        />
+        <div
+          class="invalid-feedback d-block"
+          *ngIf="!state.valid && (state?.dirty || state?.touched)"
+        >
+          <div *ngIf="state.errors.required">State is required</div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label>Zip Code</label>
+        <input
+          class="form-control"
+          type="text"
+          id="zipCode"
+          name="zipCode"
+          placeholder="Zip Code"
+          #zipCode="ngModel"
+          required
+          pattern="^(0|[1-9][0-9]*)$"
+          minlength="5"
+          [(ngModel)]="user.zipCode"
+          [ngClass]="{
+            'is-invalid': !zipCode.valid && (zipCode?.dirty || zipCode?.touched)
+          }"
+        />
+        <div
+          class="invalid-feedback d-block"
+          *ngIf="!zipCode.valid && (zipCode?.dirty || zipCode?.touched)"
+        >
+          <div *ngIf="zipCode.errors.required">Zip Code is required</div>
+          <div *ngIf="zipCode.errors.minlength">
+            Zip Code must be at least 5 characters
+          </div>
+          <div *ngIf="zipCode.errors.pattern">Zip Code must be numeric</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col d-flex justify-content-end">
+          <button class="btn btn-success" [disabled]="!f.valid">
+            Save Order Changes
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,145 @@
+<div class="container">
+  <div class="row justify-content-evenly">
+    <h3 class="text-center mb-3">My Profile</h3>
+    <div class="col-3 text-center">
+      <img
+        class="img-fluid my-3"
+        src="https://via.placeholder.com/200"
+        style="border-radius: 50%"
+      />
+      <div class="d-flex justify-content-evenly">
+        <button class="btn btn-warning" style="width: 120px">
+          Delete Image
+        </button>
+        <button class="btn btn-primary" style="width: 120px">Upload</button>
+      </div>
+    </div>
+    <div class="col-4" style="padding: 24px 0">
+      <div class="d-flex justify-content-between mb-3">
+        <div>
+          <div>First Name</div>
+          <div class="fw-bold">{{ profile.firstName }}</div>
+        </div>
+        <div>
+          <div>Last Name</div>
+          <div class="fw-bold">{{ profile.lastName }}</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div>Email</div>
+        <div class="fw-bold">{{ profile.username }}</div>
+      </div>
+      <div class="mb-3">
+        <div>Address</div>
+        <div *ngIf="!updateAddress" class="d-flex justify-content-between">
+          <div class="fw-bold">{{ profile.address }}</div>
+          <button class="btn btn-primary" (click)="editAddress()">Edit</button>
+        </div>
+      </div>
+      <form #f="ngForm" *ngIf="updateAddress" (ngSubmit)="saveAddressChanges()">
+        <div class="form-group mb-2">
+          <label>Street Address</label>
+          <input
+            class="form-control"
+            type="text"
+            id="address"
+            name="address"
+            placeholder="Street Address"
+            #address="ngModel"
+            required
+            [(ngModel)]="profile.address"
+            [ngClass]="{
+              'is-invalid':
+                !address.valid && (address?.dirty || address?.touched)
+            }"
+          />
+          <div
+            class="invalid-feedback d-block"
+            *ngIf="!address.valid && (address?.dirty || address?.touched)"
+          >
+            <div *ngIf="address.errors.required">Address is required</div>
+          </div>
+        </div>
+        <div class="form-group mb-2">
+          <label>City</label>
+          <input
+            class="form-control"
+            type="text"
+            id="city"
+            name="city"
+            placeholder="City"
+            #city="ngModel"
+            required
+            [(ngModel)]="profile.city"
+            [ngClass]="{
+              'is-invalid': !city.valid && (city?.dirty || city?.touched)
+            }"
+          />
+          <div
+            class="invalid-feedback d-block"
+            *ngIf="!city.valid && (city?.dirty || city?.touched)"
+          >
+            <div *ngIf="city.errors.required">City is required</div>
+          </div>
+        </div>
+        <div class="form-group mb-2">
+          <label>State</label>
+          <input
+            class="form-control"
+            type="text"
+            id="state"
+            name="state"
+            placeholder="State"
+            #state="ngModel"
+            required
+            [(ngModel)]="profile.state"
+            [ngClass]="{
+              'is-invalid': !state.valid && (state?.dirty || state?.touched)
+            }"
+          />
+          <div
+            class="invalid-feedback d-block"
+            *ngIf="!state.valid && (state?.dirty || state?.touched)"
+          >
+            <div *ngIf="state.errors.required">State is required</div>
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label>Zip Code</label>
+          <input
+            class="form-control"
+            type="text"
+            id="zipCode"
+            name="zipCode"
+            placeholder="Zip Code"
+            #zipCode="ngModel"
+            required
+            pattern="^(0|[1-9][0-9]*)$"
+            minlength="5"
+            [(ngModel)]="profile.zipCode"
+            [ngClass]="{
+              'is-invalid':
+                !zipCode.valid && (zipCode?.dirty || zipCode?.touched)
+            }"
+          />
+          <div
+            class="invalid-feedback d-block"
+            *ngIf="!zipCode.valid && (zipCode?.dirty || zipCode?.touched)"
+          >
+            <div *ngIf="zipCode.errors.required">Zip Code is required</div>
+            <div *ngIf="zipCode.errors.minlength">
+              Zip Code must be at least 5 characters
+            </div>
+            <div *ngIf="zipCode.errors.pattern">Zip Code must be numeric</div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-secondary" (click)="closeEdit()">
+            Cancel
+          </button>
+          <button class="btn btn-primary" [disabled]="!f.valid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

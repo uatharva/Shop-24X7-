@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3 class="mb-4">Manage Orders</h3>
+      <div
+        class="row border-bottom border-secondary mb-4"
+        *ngFor="let o of order"
+      >
+        <div class="col d-flex justify-content-between">
+          <div>
+            <h4># {{ o._id }}</h4>
+            <div>{{ o.username }}</div>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <div style="cursor: pointer">
+              <span class="text-success" [routerLink]="['/edit-order/' + o._id]"
+                >Process</span
+              >
+              |
+              <span class="text-danger">Delete</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

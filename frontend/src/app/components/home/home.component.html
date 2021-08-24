@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="row mb-5">
+    <h3 class="text-center mb-3">Products</h3>
+    <div class="col-6 m-auto">
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        style="cursor: pointer"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner rounded">
+          <div
+            *ngFor="let p of products | slice: 0:3; let i = index"
+            class="carousel-item"
+            [ngClass]="{
+              active: i === 0
+            }"
+            [routerLink]="['product-details/' + p._id]"
+          >
+            <img src="{{ p.image }}" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block">
+              <p>{{ p.description | sentence }}</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-evenly mb-5">
+    <div *ngFor="let p of products | slice: 0:3" class="card col-3 p-0">
+      <img
+        src="{{ p.image }}"
+        class="card-img-top"
+        alt="..."
+        [routerLink]="['product-details/' + p._id]"
+      />
+      <div class="card-body">
+        <div class="department-label">{{ p.department }}</div>
+        <p class="card-text">
+          {{ p.title | truncate: 51 }}
+        </p>
+        <div class="d-flex justify-content-between">
+          <div class="fw-bold">{{ p.price | currency }}</div>
+          <button class="btn btn-primary" (click)="addItemToCart(p._id)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3>Top Products</h3>
+  <div class="row row-cols-5">
+    <div *ngFor="let p of topProducts" class="card col top-products">
+      <img
+        src="{{ p.image }}"
+        class="card-img-top"
+        alt="..."
+        [routerLink]="['product-details/' + p._id]"
+      />
+      <div class="card-body">
+        <div class="top-label">#1 in {{ p.department }}</div>
+        <p class="card-text">
+          {{ p.title | truncate: 51 }}
+        </p>
+        <div class="d-flex justify-content-between">
+          <div class="fw-bold">{{ p.price | currency }}</div>
+          <button class="btn btn-primary" (click)="addItemToCart(p._id)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

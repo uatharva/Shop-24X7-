@@ -1,0 +1,134 @@
+<div class="container">
+  <ul class="nav nav-tabs mb-5">
+    <li class="nav-item" (click)="changeDepartment('Cell Phones')">
+      <a
+        class="nav-link"
+        [ngClass]="{ active: currDepartment === 'Cell Phones' }"
+        >Cell Phones</a
+      >
+    </li>
+    <li class="nav-item" (click)="changeDepartment('TV & Home Theater')">
+      <a
+        class="nav-link"
+        [ngClass]="{ active: currDepartment === 'TV & Home Theater' }"
+        >TV & Home Theater</a
+      >
+    </li>
+    <li class="nav-item" (click)="changeDepartment('Audio')">
+      <a class="nav-link" [ngClass]="{ active: currDepartment === 'Audio' }"
+        >Audio</a
+      >
+    </li>
+    <li class="nav-item" (click)="changeDepartment('Appliances')">
+      <a
+        class="nav-link"
+        [ngClass]="{ active: currDepartment === 'Appliances' }"
+        >Appliances</a
+      >
+    </li>
+    <li class="nav-item" (click)="changeDepartment('Furniture')">
+      <a class="nav-link" [ngClass]="{ active: currDepartment === 'Furniture' }"
+        >Furniture</a
+      >
+    </li>
+  </ul>
+  <div class="row d-flex justify-content-around">
+    <div class="col-2">
+      <h5>Price Range</h5>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          [ngClass]="{ active: currPriceRange === 1 }"
+          #1
+          (click)="changePriceRange(1, 5, 50)"
+        >
+          $5 - $50
+        </li>
+        <li
+          class="list-group-item"
+          [ngClass]="{ active: currPriceRange === 2 }"
+          #2
+          (click)="changePriceRange(2, 50, 150)"
+        >
+          $50 - $150
+        </li>
+        <li
+          class="list-group-item"
+          [ngClass]="{ active: currPriceRange === 3 }"
+          #3
+          (click)="changePriceRange(3, 150, 500)"
+        >
+          $150 - $500
+        </li>
+        <li
+          class="list-group-item"
+          [ngClass]="{ active: currPriceRange === 4 }"
+          #4
+          (click)="changePriceRange(4, 500, 1500)"
+        >
+          $500 - $1500
+        </li>
+        <li
+          class="list-group-item"
+          [ngClass]="{ active: currPriceRange === 5 }"
+          #5
+          (click)="changePriceRange(5, 1500, 5000)"
+        >
+          $1500 - $5000
+        </li>
+      </ul>
+      <button class="btn btn-outline-secondary" (click)="resetFilter()">
+        Reset Filter
+      </button>
+    </div>
+    <div class="col-10">
+      <h3>{{ currDepartment }}</h3>
+      <div *ngIf="currPriceRange === 0" class="row row-cols-3">
+        <div
+          *ngFor="let p of getProductsInDept()"
+          class="card col"
+          style="margin-right: 16px"
+        >
+          <img
+            src="{{ p.image }}"
+            class="card-img-top"
+            alt="..."
+            [routerLink]="['/product-details/' + p._id]"
+          />
+          <div class="card-body">
+            <p class="card-text">{{ p.title | truncate: 51 }}</p>
+            <div class="d-flex justify-content-between">
+              <div class="fw-bold">{{ p.price | currency }}</div>
+              <button class="btn btn-primary" (click)="addItemToCart(p._id)">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="currPriceRange !== 0" class="row row-cols-3">
+        <div
+          *ngFor="let p of getProductsInPriceRange()"
+          class="card col"
+          style="margin-right: 16px"
+        >
+          <img
+            src="{{ p.image }}"
+            class="card-img-top"
+            alt="..."
+            [routerLink]="['/product-details/' + p._id]"
+          />
+          <div class="card-body">
+            <p class="card-text">{{ p.title | truncate: 51 }}</p>
+            <div class="d-flex justify-content-between">
+              <div class="fw-bold">{{ p.price | currency }}</div>
+              <button class="btn btn-primary" (click)="addItemToCart(p._id)">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
